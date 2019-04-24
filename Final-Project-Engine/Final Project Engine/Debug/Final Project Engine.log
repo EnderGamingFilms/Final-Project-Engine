@@ -1,0 +1,15 @@
+﻿  App.cpp
+D:\Dev\Final Project Engine\Final Project Engine\EnemyExplode.h(13): warning C4005: 'PI': macro redefinition
+  D:\Dev\Final Project Engine\Final Project Engine\Init.h(17): note: see previous definition of 'PI'
+D:\Dev\Final Project Engine\Final Project Engine\App.cpp(63): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Dev\Final Project Engine\Final Project Engine\App.cpp(67): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Dev\Final Project Engine\Final Project Engine\App.cpp(74): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Dev\Final Project Engine\Final Project Engine\App.cpp(91): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Dev\Final Project Engine\Final Project Engine\App.cpp(93): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Dev\Final Project Engine\Final Project Engine\App.cpp(94): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Dev\Final Project Engine\Final Project Engine\App.cpp(99): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Dev\Final Project Engine\Final Project Engine\App.cpp(100): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Dev\Final Project Engine\Final Project Engine\App.cpp(110): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Dev\Final Project Engine\Final Project Engine\App.cpp(137): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Dev\Final Project Engine\Final Project Engine\App.cpp(145): warning C4305: 'argument': truncation from 'double' to 'float'
+  Final Project Engine.vcxproj -> D:\Dev\Final Project Engine\Debug\Final Project Engine.exe
