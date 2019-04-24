@@ -2,17 +2,40 @@
 
 Enemy::Enemy()
 {
-	xSpeed = 0;
-	ySpeed = 0;
+	Shader *localColor = this->getShader();
+	localColor->Create("u_Color");
+	localColor->setRgb(1, 0, 0);
+	localColor->Use();
+	localColor->UpdateUniform();
+	localColor->unBind();
+	
+	Rectangle::Init(ENEMY_SIZE, ENEMY_SIZE);
 
-	spawn[0] = 0;
-	spawn[1] = 0;
+
+	this->xSpeed = rand() % 10 / (float)1000;
+	this->ySpeed = rand() % 10 / (float)1000;
+
+	this->spawn[0] = rand() % 100 / (float)100;
+	this->spawn[1] = rand() % 100 / (float)100;
+
+	box.Init(ENEMY_SIZE);
+	border.Init(1, true, 0.005);
+
+	box.Translate(spawn[0], spawn[1]);
+	Rectangle::Translate(spawn[0], spawn[1]);
 }
 
 Enemy::~Enemy(){}
 
 Enemy::Enemy(float xNewSpeed, float yNewSpeed, float spawnX, float spawnY)
 {
+	Shader *localColor = this->getShader();
+	localColor->Create("u_Color");
+	localColor->setRgb(1, 0, 0);
+	localColor->Use();
+	localColor->UpdateUniform();
+	localColor->unBind();
+	
 	Rectangle::Init(ENEMY_SIZE, ENEMY_SIZE);
 
 
@@ -51,6 +74,8 @@ void Enemy::init(float xNewSpeed, float yNewSpeed, float spawnX, float spawnY)
 
 int Enemy::iterate()
 {
+	this->draw();
+	
 	Boundlimit lim = Unbound;
 	if (border.isInBounds(box) == Upper)
 	{
@@ -89,8 +114,22 @@ void Enemy::setMoveY(const float &moveY)
 
 void Enemy::draw()
 {
+	this->getShader()->Use();
+	
 	this->Rectangle::Bind();
 	this->Rectangle::BufferVertex();
 	this->Rectangle::Draw();
 	this->Rectangle::Unbind();
+
+	this->box.Bind();
+	this->box.BufferVertex();
+	this->box.Draw();
+	this->box.Unbind();
+
+	this->getShader()->unBind();
+}
+
+Hitbox * Enemy::getHitBox()
+{
+	return &this->box;
 }

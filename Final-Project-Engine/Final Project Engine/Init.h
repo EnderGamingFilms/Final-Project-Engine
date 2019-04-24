@@ -20,6 +20,8 @@
 
 #define ENEMY_SIZE 0.15
 
+#define FIRE_RATE 10
+
 
 #include <iostream>
 #include <fstream>
@@ -45,12 +47,12 @@
 #include "Bullet.h"
 #include "Shader.h"
 #include "Enemy.h"
+#include "BulletList.h"
 #include "DestructorList.h"
 #include "EnemyExplode.h"
 #include "EnemyList.h"
-#include "Node.h"
 #include "List.h"
-#include "BulletList.h"
+#include "Node.h"
 
 using std::string;
 using std::fstream;

@@ -10,7 +10,7 @@
 #include <math.h>
 
 
-class Rectangle : public Shape
+class Rectangle : virtual public Shape
 {
 public:
 	Rectangle() { return; }
@@ -31,7 +31,7 @@ public:
 
 	void TranslateToOrigin();
 
-	void Translate(float xAmount, float yAmount);
+	virtual void Translate(float xAmount, float yAmount);
 
 	void Swing(float theta);
 

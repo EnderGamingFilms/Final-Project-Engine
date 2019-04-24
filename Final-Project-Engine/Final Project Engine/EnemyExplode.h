@@ -12,12 +12,12 @@
 #define CURVE_POINT_COUNT 99
 #define PI 3.14159
 #define ENEMY_EXPLODE_TIMER 60
-#define SWELL_CONSTANT 0.1
+#define SWELL_CONSTANT 0.01
 
 class EnemyExplode : public Shape
 {
 public:
-	EnemyExplode(float xPos = 0, float yPos = 0, float len = 0.05);
+	EnemyExplode(float xPos = 0, float yPos = 0, float len = 0.1);
 	void Draw();
 	int iterate(); //True for continue iterating, false for finished -> delete object
 	int getTimer();

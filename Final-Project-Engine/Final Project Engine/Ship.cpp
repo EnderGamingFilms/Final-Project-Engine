@@ -242,3 +242,8 @@ void Ship::CalcApproxMidPoint(float m[2])
 {
 	body.CalcMidPoint(m);
 }
+
+Hitbox * Ship::getHitbox()
+{
+	return &this->hb;
+}

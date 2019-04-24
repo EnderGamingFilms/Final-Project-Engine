@@ -11,7 +11,7 @@
 
 #define PI 3.1415926
 
-class Circle : private Shape
+class Circle : virtual private Shape
 {
 public:
 	Circle() { return; }

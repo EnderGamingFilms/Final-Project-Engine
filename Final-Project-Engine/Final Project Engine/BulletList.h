@@ -1,13 +1,16 @@
-#ifndef BULLETLIST_H
-#define BULLETLIST_H
-#include "Init.h"
+#pragma once
 
-class BulletList : public List 
+#include "List.h"
+#include "EnemyList.h"
+#include "DestructorList.h"
+
+class BulletList : public List
 {
 public:
-	void iterate(EnemyList &enemies, DestructorList &destructors) { return; }
-	bool deleteEnemy(EnemyList &enemies, float *xMid, float *yMid) { return false; }
-	bool pushDestructor(DestructorList &destructors, float xMid, float yMid) { return false; }
+	BulletList() { gameBound.Init(1, true, 0.005); }
+	void iterate(EnemyList &enemies, DestructorList &destructors);
+	bool deleteEnemy(EnemyList &enemies, int index, float *xMid, float *yMid);
+	void pushDestructor(DestructorList &destructors, float xMid, float yMid);
+private:
+	Bounds gameBound;
 };
-
-#endif

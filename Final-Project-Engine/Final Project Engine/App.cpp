@@ -6,7 +6,7 @@ int main(void)
 
 	do
 	{
-		system("CLS");
+		system("cls");
 		choice = 0;
 		cout << "Welcome to the game! Please select an option\n (1) Play\n (2) Exit\n ";
 		while (choice != 1 && choice != 2)
@@ -37,7 +37,7 @@ int main(void)
 
 			gameWindow window;
 
-			window.Create(1000, "Game");
+			window.Create(2000, "Game");
 
 			if (window.validateWindow() == false)
 			{
@@ -111,6 +111,12 @@ int main(void)
 
 			Bullet b1;
 
+			EnemyList enemies;
+			BulletList bullets;
+			DestructorList destructors;
+
+			int fireRateTimer = 0;
+
 			while (!glfwWindowShouldClose(window.get()) && life == true)
 			{
 
@@ -128,25 +134,55 @@ int main(void)
 
 
 
+				if (i % 120 == 0)
+				{
+					Enemy * init = new Enemy;
+					while (init->getHitBox()->isOverlap(*(ship.getHitbox()))); //Makes sure enemy does not spawn in on ship
+					{
+						delete init;
+						init = new Enemy;
+					}
+					enemies.insertAtFront(init);
+				}
 
+				//if (i == 1)
+				//	enemies.insertAtFront(new Enemy(0, 0, 0, 0.5));
 
-
+				destructors.iterate();
+				enemies.iterate();
+				bullets.iterate(enemies, destructors);
 
 				ship.Draw();
 				ship.UserMove(window.get());
 				ship.Bounce(ship.getSpeed() * 1.5);
 
-				if (ship.isFired(window.get()))
+				if (fireRateTimer <= 0)
 				{
-					float ms[2];
+					if (ship.isFired(window.get()))
+					{
+						float ms[2];
 
-					ship.CalcApproxMidPoint(ms);
+						ship.CalcApproxMidPoint(ms);
 
-					b1.Init(ms[0], ms[1], 0.015, 0.1, ship.getCurrentRotation());
-					cout << "fire" << endl;
+						//b1.Init(ms[0], ms[1], 0.015, 0.1, ship.getCurrentRotation());
+						Bullet * nBullet = new Bullet(ms[0], ms[1], 0.015, 0.1, ship.getCurrentRotation());
+						bullets.insertAtBack(nBullet);
+
+						cout << "fire" << endl;
+						fireRateTimer = FIRE_RATE;
+					}
+				}
+				else
+					fireRateTimer--;
+				for (Node *current = enemies.getStart(); current != nullptr; current = current->getNext())
+				{
+					Enemy *currentEnemy = dynamic_cast<Enemy *> (current->getData());
+					Hitbox *HBship = ship.getHitbox(), *HBenemy = currentEnemy->getHitBox();
+					if (HBship->isOverlap(*HBenemy))
+						life = false;
 				}
 
-				s2.Use();
+				/*s2.Use();
 
 				if (b1.getIsInit())
 				{
@@ -154,7 +190,7 @@ int main(void)
 					b1.Fly();
 				}
 
-				s2.unBind();
+				s2.unBind();*/
 
 
 

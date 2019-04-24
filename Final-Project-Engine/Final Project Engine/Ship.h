@@ -37,6 +37,8 @@ public:
 
 	void CalcApproxMidPoint(float m[2]);
 
+	Hitbox * getHitbox();
+
 
 private:
 

@@ -7,7 +7,7 @@ EnemyExplode::EnemyExplode(float xPos, float yPos, float len)
 
 	Shader *localColor = this->getShader();
 	localColor->Create("u_Color");
-	localColor->setRgb(0.9, 0.3, 0);
+	localColor->setRgb(1, 1, 1);
 	localColor->Use();
 	localColor->UpdateUniform();
 	localColor->unBind();
@@ -18,7 +18,7 @@ EnemyExplode::EnemyExplode(float xPos, float yPos, float len)
 	this->midpoint[1] = yPos;
 	for (int i = 0; i < CURVE_POINT_COUNT && (i <= 1 || this->curve[i - 1] != 0); i++)
 	{
-		xVal = (float)i / 100;
+		xVal = (float)i / CURVE_POINT_COUNT;
 		this->curve[i] = -0.4071 * pow(xVal, 3) + 0.3011 * pow(xVal, 2) + 0.0781 * xVal;
 		this->curve[i] *= length;
 		if (this->curve[i] < 0)
