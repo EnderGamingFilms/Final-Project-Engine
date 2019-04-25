@@ -421,10 +421,15 @@ void Triangle::Swing(float theta)
 		//if the shape has rotated more than 360 degrees
 		currentRotation += theta;
 
-		if (currentRotation > (2 * PI))
-		{
-			currentRotation = ((2 * PI) - currentRotation);
-		}
+		//if (currentRotation >= (2.0f * PI))
+		//{
+		//	currentRotation = ((2.0f * PI) - currentRotation);
+		//}
+
+		//if (currentRotation <= (-2.0f * PI))
+		//{
+		//	currentRotation = ((2.0f * PI) + currentRotation);
+		//}
 
 	}
 }

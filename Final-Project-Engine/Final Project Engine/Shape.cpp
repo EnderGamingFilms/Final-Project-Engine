@@ -18,8 +18,6 @@ Shape::Shape()
 	this->indexBufferType = GL_ELEMENT_ARRAY_BUFFER;
 	this->componentsPerVertex = 0;
 	this->isAlloced = false;
-
-	this->color = new Shader();
 }
 
 Shape::~Shape() 
@@ -33,17 +31,6 @@ Shape::~Shape()
 			delete[]indeces;
 		}
 	}
-}
-
-int Shape::iterate()
-{
-	cout << "ierate" << endl;
-	return -1;
-}
-
-Shader * Shape::getShader()
-{
-	return this->color;
 }
 
 void Shape::Init(int numVerteces, int componentsPerVertex, int sizeofDataTypeBytes, int numFloats, float newMatix[], bool isIndexed, int numIndeces, unsigned int newIndeces[],

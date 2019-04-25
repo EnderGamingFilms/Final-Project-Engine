@@ -1,6 +1,3 @@
-#pragma once
-
-
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -22,6 +19,8 @@ public:
 	/* Use a FreeRotate function which does not update the objects current rotation to initialize, along with hitarray etc*/
 
 	int FreeMovements();
+
+	int HitAnimation();
 
 
 private:

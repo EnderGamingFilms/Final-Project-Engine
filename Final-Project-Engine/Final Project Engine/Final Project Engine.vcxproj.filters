@@ -53,10 +53,10 @@
       <UniqueIdentifier>{8fa62000-50b0-4b6d-ac58-9dbab38fec84}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Data Structures">
-      <UniqueIdentifier>{1cdeb7c4-f56c-41ad-8279-f9a2b8fed3b7}</UniqueIdentifier>
+      <UniqueIdentifier>{ebdcfa5f-028f-4d67-8c95-591871837c45}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Data Structures">
-      <UniqueIdentifier>{550576dc-081f-481b-b700-a2662b9ebba0}</UniqueIdentifier>
+      <UniqueIdentifier>{2f693993-4000-4e9c-a061-92065cc759a9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -105,29 +105,14 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
+    <ClCompile Include="Swarm.cpp">
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="BulletList.cpp">
-      <Filter>Source Files\Data Structures</Filter>
+    <ClCompile Include="Magazine.cpp">
+      <Filter>Source Files\Collision Detection</Filter>
     </ClCompile>
-    <ClCompile Include="DestructorList.cpp">
-      <Filter>Source Files\Data Structures</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyExplode.cpp">
-      <Filter>Source Files\Data Structures</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyList.cpp">
-      <Filter>Source Files\Data Structures</Filter>
-    </ClCompile>
-    <ClCompile Include="List.cpp">
-      <Filter>Source Files\Data Structures</Filter>
-    </ClCompile>
-    <ClCompile Include="Node.cpp">
-      <Filter>Source Files\Data Structures</Filter>
+    <ClCompile Include="ExplodeAnimation.cpp">
+      <Filter>Source Files\Display</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -173,29 +158,17 @@
     <ClInclude Include="Bullet.h">
       <Filter>Header Files\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Header Files\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
+    <ClInclude Include="Swarm.h">
       <Filter>Header Files\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="BulletList.h">
-      <Filter>Header Files\Data Structures</Filter>
+    <ClInclude Include="Magazine.h">
+      <Filter>Header Files\Collision Detection</Filter>
     </ClInclude>
-    <ClInclude Include="DestructorList.h">
-      <Filter>Header Files\Data Structures</Filter>
+    <ClInclude Include="FireTimer.h">
+      <Filter>Header Files\Base</Filter>
     </ClInclude>
-    <ClInclude Include="EnemyExplode.h">
-      <Filter>Header Files\Data Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyList.h">
-      <Filter>Header Files\Data Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="List.h">
-      <Filter>Header Files\Data Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>Header Files\Data Structures</Filter>
+    <ClInclude Include="ExplodeAnimation.h">
+      <Filter>Header Files\Display</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

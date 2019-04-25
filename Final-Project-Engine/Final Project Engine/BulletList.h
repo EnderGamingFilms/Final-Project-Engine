@@ -1,16 +1,11 @@
 #pragma once
 
-#include "List.h"
-#include "EnemyList.h"
-#include "DestructorList.h"
+#include "Init.h"
 
 class BulletList : public List
 {
 public:
-	BulletList() { gameBound.Init(1, true, 0.005); }
-	void iterate(EnemyList &enemies, DestructorList &destructors);
-	bool deleteEnemy(EnemyList &enemies, int index, float *xMid, float *yMid);
-	void pushDestructor(DestructorList &destructors, float xMid, float yMid);
-private:
-	Bounds gameBound;
+	void iterate(EnemyList &enemies, DestructorList &destructors) { return; }
+	bool deleteEnemy(EnemyList &enemies, float *xMid, float *yMid) { return false; }
+	bool pushDestructor(DestructorList &destructors, float xMid, float yMid) { return false; }
 };

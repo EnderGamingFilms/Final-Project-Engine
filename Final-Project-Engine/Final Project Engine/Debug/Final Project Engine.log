@@ -1,8 +1,19 @@
-﻿  BulletList.cpp
-c:\users\pastw\downloads\final project engine\final project engine\bulletlist.h(10): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\pastw\downloads\final project engine\final project engine\enemyexplode.h(13): warning C4005: 'PI': macro redefinition
-  c:\users\pastw\downloads\final project engine\final project engine\init.h(17): note: see previous definition of 'PI'
-c:\users\pastw\downloads\final project engine\final project engine\bulletlist.cpp(41): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\pastw\downloads\final project engine\final project engine\bulletlist.cpp(48): warning C4305: 'argument': truncation from 'double' to 'float'
-  Final Project Engine.vcxproj -> C:\Users\pastw\Downloads\Final Project Engine\Debug\Final Project Engine.exe
-  Final Project Engine.vcxproj -> C:\Users\pastw\Downloads\Final Project Engine\Debug\Final Project Engine.pdb (Partial PDB)
+﻿  App.cpp
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\explodeanimation.h(6): warning C4005: 'PI': macro redefinition
+  c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\init.h(15): note: see previous definition of 'PI'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(103): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(110): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(134): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(136): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(137): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(139): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(142): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(144): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(149): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(188): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(189): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(205): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(247): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\peyton\documents\visual studio 2015\projects\opengl\final project engine\final project engine\app.cpp(11): warning C4101: 'tests': unreferenced local variable
+  Final Project Engine.vcxproj -> C:\Users\Peyton\Documents\Visual Studio 2015\Projects\openGl\Final Project Engine\Debug\Final Project Engine.exe
+  Final Project Engine.vcxproj -> C:\Users\Peyton\Documents\Visual Studio 2015\Projects\openGl\Final Project Engine\Debug\Final Project Engine.pdb (Partial PDB)

@@ -270,11 +270,6 @@ void Rectangle::Swing(float theta)
 		glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 8, matrix, GL_DYNAMIC_DRAW);
 
 		currentRotation += theta;
-
-		if (currentRotation > (2 * PI))
-		{
-			currentRotation = ((2 * PI) - currentRotation);
-		}
 	}
 }
 

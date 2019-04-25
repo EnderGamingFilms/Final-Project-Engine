@@ -19,7 +19,7 @@ public:
 
 	void init(float xNewSpeed, float yNewSpeed, float spawnX, float spawnY);
 
-	Hitbox * getHitBox();
+	//Hitbox getHitBox();
 
 	//void setHitBox(Hitbox newBox);
 

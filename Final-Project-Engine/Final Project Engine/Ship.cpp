@@ -35,6 +35,7 @@ Ship::Ship(float turnSpeed, float movementSpeed, unsigned int bodyColor, unsigne
 
 	this->FreeRotate(-1.59);
 
+	float mids[2];
 
 	this->isAlloced = true;
 	this->bodyColor = bodyColor;
@@ -93,7 +94,8 @@ void Ship::Translate(float x, float y)
 void Ship::Rotate(float theta)
 {
 	float mids[2];
-	body.CalcMidPoint(mids);
+
+	hb.CalcMidPoint(mids);
 
 	float xTranslation = mids[0] * -1;
 	float yTranslation = mids[1] * -1;
@@ -169,25 +171,19 @@ void Ship::FreeSwing(float theta)
 
 float Ship::getCurrentRotation()
 {
-	float x = 0.0f;
-
-	x += body.getCurrentRotation();
-	x += leftRivet.getCurrentRotation();
-	x += rightRivet.getCurrentRotation();
-	x += hb.getCurrentRotation();
-
-	x = x / 4;
-
-	return x;
+	return body.getCurrentRotation();
 }
 
 void Ship::UserMove(GLFWwindow * window)
 {
 
-
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
 	{
 		this->Translate(cos(getCurrentRotation()) * movementSpeed * SQ_ASPECT_RATIO, sin(getCurrentRotation()) * movementSpeed);
+	}
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+	{
+
 	}
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
 	{
@@ -197,6 +193,7 @@ void Ship::UserMove(GLFWwindow * window)
 	{
 		this->Rotate(-1 * turnSpeed);
 	}
+
 
 }
 
@@ -241,9 +238,4 @@ bool Ship::isFired(GLFWwindow * win)
 void Ship::CalcApproxMidPoint(float m[2])
 {
 	body.CalcMidPoint(m);
-}
-
-Hitbox * Ship::getHitbox()
-{
-	return &this->hb;
 }

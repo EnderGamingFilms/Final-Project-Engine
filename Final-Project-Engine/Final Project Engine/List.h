@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include "Node.h"
 
 #define FALSE_ITERATE -1 //No iteration action needed
 
@@ -16,7 +15,6 @@ public:
 	void insertAtBack(Shape *insert);
 	Shape * deleteAtFront();
 	bool deleteAtIndex(int index);
-	Node * getIndex(int index);
 	int maxIndex();
 
 private:

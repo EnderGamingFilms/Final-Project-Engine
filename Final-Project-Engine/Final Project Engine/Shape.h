@@ -1,14 +1,9 @@
-#pragma once
-
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
 #include <vector>
 #include <queue>
-#include "Shader.h"
-
-
 
 
 /* Notes For Derriving*/
@@ -101,10 +96,6 @@ public:
 
 	virtual void CalcMidpoint(float[2]) { return; }
 
-	virtual int iterate();
-
-	Shader * getShader();
-
 private:
 
 	/*Buffers*/
@@ -134,6 +125,4 @@ private:
 	unsigned int vertexArrayObject; // (dont have to use)
 
 	bool isAlloced;
-
-	Shader * color;
 };

@@ -1,8 +1,6 @@
-#pragma once
-
 #define GLEW_STATIC
 
-#define RELEASE_MODE true
+#define RELEASE_MODE false
 
 #define SQ_ASPECT_RATIO 0.5625
 
@@ -18,10 +16,13 @@
 
 #define ROUND_TO_ZERO 0.0000001
 
-#define ENEMY_SIZE 0.15
+#define MAGAZINE_SIZE 30
 
-#define FIRE_RATE 10
+#define ENEMY_SIZE 0.11
 
+#define FIRE_RATE 8
+
+#define FALSE_ITERATE -1
 
 #include <iostream>
 #include <fstream>
@@ -45,14 +46,9 @@
 #include "ScoreBoard.h"
 #include "Ship.h"
 #include "Bullet.h"
-#include "Shader.h"
-#include "Enemy.h"
-#include "BulletList.h"
-#include "DestructorList.h"
-#include "EnemyExplode.h"
-#include "EnemyList.h"
-#include "List.h"
-#include "Node.h"
+#include "Swarm.h"
+#include "Magazine.h"
+#include "FireTimer.h"
 
 using std::string;
 using std::fstream;
@@ -65,11 +61,67 @@ using std::vector;
 using std::queue;
 
 unsigned int CompileShader(unsigned int type, const string & source);
+
 unsigned int CreateShadervf(const string & vertexShader, const string & fragmentShader);
 
-//type of data enum
+void printGameMenu(const string &name);
 
-enum direction { south, west, north, east };
+int getMenuOption(int menuMin, int menuMax, void menu(const string &name), const string &name);
+
+//type of data enum
+enum dataType{fourF, oneI};
+
+enum direction{south, west, north, east};
+
+
+class Shader
+{
+public:
+	~Shader();
+
+	Shader() { return; }
+
+	Shader(const string &InitFile, dataType u_Type, int textureSlot = 0);
+
+	void Init(const string &InitFile, dataType u_Type, int textureSlot);
+
+	void Create(const char *locationKey);
+
+	unsigned int ID();
+
+	int Location();
+
+	void Use();
+
+	void UpdateUniform();
+
+	void setRgb(float r, float g, float b);
+
+	void setTextureSlot(int &slot) { this->textureSlot = slot; }
+
+	void unBind();
+
+	string getVertexString();
+	string getFragmentString();
+
+	void fade(float timer);
+
+private:
+
+	int loc;
+
+	unsigned int shaderID;
+
+	string sVertex;
+
+	string sFragment;
+
+	dataType U_Type;
+
+	float rgb[3];
+
+	int textureSlot;
+};
 
 
 class gameWindow

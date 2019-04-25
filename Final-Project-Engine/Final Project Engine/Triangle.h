@@ -104,6 +104,8 @@ public:
 	/* Indirectly returns the coordinates of the specified vertex*/
 	void getVertex(int vertex, float vert[2]);
 
+	void setCurRotation(float theta) { this->currentRotation = theta; }
+
 private:
 	float *newMatrix;
 

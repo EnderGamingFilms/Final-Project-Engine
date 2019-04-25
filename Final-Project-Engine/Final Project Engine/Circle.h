@@ -11,7 +11,7 @@
 
 #define PI 3.1415926
 
-class Circle : virtual private Shape
+class Circle :public Shape
 {
 public:
 	Circle() { return; }
@@ -31,6 +31,8 @@ public:
 	void Draw();
 
 	void Translate(float xAmount = 0, float yAmount = 0);
+
+	void TranslateToOrigin();
 
 	void Swing(float theta);
 

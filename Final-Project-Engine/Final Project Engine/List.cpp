@@ -56,7 +56,7 @@ Shape * List::deleteAtFront()
 	{
 		Shape *ret = this->start->getData();
 		this->start = (this->start->getNext());
-		if (this->start == nullptr) //Empty List
+		if (this->start = nullptr) //Empty List
 			this->end = nullptr;
 		return ret;
 	}
@@ -65,14 +65,6 @@ Shape * List::deleteAtFront()
 bool List::deleteAtIndex(int index)
 {
 	Node * current = this->start;
-	if (index == 0) //Corner case - index = 0
-	{
-		if (this->deleteAtFront() == nullptr) //Empty list
-			return false;
-		else
-			return true;
-	}
-
 	for (int i = 0; current != nullptr; i++, current = current->getNext())
 	{
 		if (i == index - 1) //Next node is indexed
@@ -90,17 +82,6 @@ bool List::deleteAtIndex(int index)
 
 		}
 	}
-}
-
-Node * List::getIndex(int index)
-{
-	int i = 0;
-	for (Node *current = this->start; current != nullptr; current = current->getNext(), i++)
-	{
-		if (i == index)
-			return current;
-	}
-	return nullptr;
 }
 
 int List::maxIndex()

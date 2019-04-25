@@ -56,6 +56,17 @@ void Circle::Translate(float xAmount, float yAmount)
 	midpoint[1] += yAmount; //Modifies y pos
 }
 
+void Circle::TranslateToOrigin()
+{
+	float mids[2];
+	getMidpoint(mids);
+
+	float xTranslation = mids[0] * -1;
+	float yTranslation = mids[1] * -1;
+
+	Translate(xTranslation, yTranslation);
+}
+
 void Circle::Swing(float theta)
 {
 	float tempX, tempY;

@@ -1,6 +1,3 @@
-#pragma once
-
-
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -10,7 +7,7 @@
 #include <math.h>
 
 
-class Rectangle : virtual public Shape
+class Rectangle : public Shape
 {
 public:
 	Rectangle() { return; }
@@ -31,7 +28,7 @@ public:
 
 	void TranslateToOrigin();
 
-	virtual void Translate(float xAmount, float yAmount);
+	void Translate(float xAmount, float yAmount);
 
 	void Swing(float theta);
 
@@ -40,6 +37,8 @@ public:
 	void FreeSwing(float theta);
 
 	void FreeRotate(float theta);
+
+	void setCurRotation(float theta) { this->currentRotation = theta; }
 
 private:
 

@@ -9,7 +9,7 @@
 #include <math.h>
 
 
-class Bullet : public Hitbox// , public Circle
+class Bullet : public Hitbox , public Circle
 {
 public:
 	~Bullet() { this->isInitialized = false; return; }
@@ -26,7 +26,7 @@ public:
 
 	void Fly();
 
-	int iterate();
+	void Reset();
 
 private:
 	float speed;
@@ -35,5 +35,4 @@ private:
 	float firedAngle;
 
 	bool isInitialized;
-	Circle circleShape;
 };
